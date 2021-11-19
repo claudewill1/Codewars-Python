@@ -10,6 +10,9 @@ Computability Theory
 Theoretical Computer Science
 """
 
+"""
+On one test this solution causes problems:
+
 def mygcd(x, y):
     if x == 0 or x == y:
         return y
@@ -20,3 +23,12 @@ def mygcd(x, y):
     if x > y:
         return mygcd(x-y, y) 
     return mygcd(x,y-x)
+
+"""
+
+# Final Solution
+def mygcd(x, y):
+    if y == 0:
+        return x
+    else:
+        return mygcd(y,x%y)
